@@ -1,0 +1,11 @@
+jupyter
+seldon-deploy-sdk
+requests
+scikit-learn
+pandas
+xgboost
+alibi
+alibi-detect
+dill
+seaborn
+
