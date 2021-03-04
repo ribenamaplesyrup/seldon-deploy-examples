@@ -1,0 +1,12 @@
+channels:
+- defaults
+dependencies:
+- python=3.7.3
+- scikit-learn=0.20.1
+- numpy
+- pandas
+- pip:
+  - mlflow
+  - cloudpickle==1.2.1
+  - seldon-core
+name: mlflow-env
