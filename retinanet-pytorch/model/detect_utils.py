@@ -8,7 +8,6 @@ def predict(image, model, device, detection_threshold):
     transform = transforms.Compose([transforms.ToTensor(),])
     image = transform(image).to(device)
     image = image.unsqueeze(0) # add a batch dimension
-    print(image)
     with torch.no_grad():
         outputs = model(image) # get predictions
     # get all the score

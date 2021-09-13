@@ -16,7 +16,7 @@ class ObjectDetector(object):
 
     def load(self):
         logger.info("Loading...")
-        os.environ['TORCH_HOME'] = 'models'
+        os.environ['TORCH_HOME'] = 'mnt'
         self._model = torchvision.models.detection.retinanet_resnet50_fpn(pretrained=True)
         self._model.eval().to(device)
         self.ready = True
@@ -27,7 +27,9 @@ class ObjectDetector(object):
                 self.load()
 
             logger.info("Calling predict")
-            return detect_utils.predict(X, self._model, device, 0.7)
+            X = X.astype(np.uint8)
+            boxes, classes = detect_utils.predict(X, self._model, device, 0.7)
+            return [boxes.tolist(), classes]
 
         except Exception as ex:
             logging.exception("Exception during predict!")
