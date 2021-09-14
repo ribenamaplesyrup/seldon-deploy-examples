@@ -2,7 +2,7 @@
 
 ## To Get Started ...
 
-1. 'git clone' this repo.
+1. ``git clone`` this repo.
 2. Open your command prompt and navigate to `seldon-deploy-examples/retinanet-pytorch/model`
 3. Create and activate an environment with 'torch' and 'torchvision' installed.
 4. Run `test.py` to download the model from Torch Hub and run inference on a test image.
